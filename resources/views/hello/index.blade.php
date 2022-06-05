@@ -10,7 +10,7 @@
 @section('content')
 <p>{{$msg}}</p>
 @if (count($errors) > 0)
-<p>入力に問題があります。再入力してください。</p>
+    <p>入力に問題があります。再入力してください。</p>
 @endif
 
 <form action="/hello" method="post">
@@ -21,7 +21,7 @@
             <th>ERROR</th>
             <td>{{$message}}</td>
         </tr>
-        $enderror
+        @enderror
         <tr>
             <th>name :</th>
             <td><input type="text" name="name" value="{{old('name')}}"></td>
@@ -31,7 +31,7 @@
             <th>ERROR</th>
             <td>{{$message}}</td>
         </tr>
-        $enderror
+        @enderror
         <tr>
             <th>email :</th>
             <td><input type="text" name="email" value="{{old('email')}}"></td>
@@ -41,7 +41,7 @@
             <th>ERROR</th>
             <td>{{$message}}</td>
         </tr>
-        $enderror
+        @enderror
         <tr>
             <th>age :</th>
             <td><input type="text" name="age" value="{{old('age')}}"></td>
