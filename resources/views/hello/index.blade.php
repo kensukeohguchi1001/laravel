@@ -10,41 +10,21 @@
 @section('content')
 <p>{{$msg}}</p>
 @if (count($errors) > 0)
-    <p>入力に問題があります。再入力してください。</p>
+<p>入力に問題があります。再入力してください。</p>
 @endif
 
 <form action="/hello" method="post">
     <table>
         @csrf
-        @error('name')
+        @if ($errors->has('msg'))
         <tr>
             <th>ERROR</th>
-            <td>{{$message}}</td>
+            <td>{{$errors->first('msg')}}</td>
         </tr>
-        @enderror
+        @endif
         <tr>
-            <th>name :</th>
-            <td><input type="text" name="name" value="{{old('name')}}"></td>
-        </tr>
-        @error('email')
-        <tr>
-            <th>ERROR</th>
-            <td>{{$message}}</td>
-        </tr>
-        @enderror
-        <tr>
-            <th>email :</th>
-            <td><input type="text" name="email" value="{{old('email')}}"></td>
-        </tr>
-        @error('age')
-        <tr>
-            <th>ERROR</th>
-            <td>{{$message}}</td>
-        </tr>
-        @enderror
-        <tr>
-            <th>age :</th>
-            <td><input type="text" name="age" value="{{old('age')}}"></td>
+            <th>Message :</th>
+            <td><input type="text" name="msg" value="{{old('msg')}}"></td>
         </tr>
         <tr>
             <th></th>
