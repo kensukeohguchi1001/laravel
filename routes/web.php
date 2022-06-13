@@ -19,8 +19,7 @@ Route::get('/', function () {
 
 Route::get('hello', 'App\Http\Controllers\HelloController@index');
 Route::post('hello', 'App\Http\Controllers\HelloController@post');
-
-// ここでゲットメソッドとポストメソッドを呼び出している
-// ここでのHelloってなに？
-// パス名、第二引数は？コントローラの名前とアクション名を指定している
-// これをクライアント側へ返却する
+Route::get('hello/add', 'App\Http\Controllers\HelloController@add');
+Route::post('hello/add', 'App\Http\Controllers\HelloController@create');
+Route::get('hello/show', 'App\Http\Controllers\HelloController@show');
+Route::get('person', 'App\Http\Controllers\PersonController@index');

@@ -1,28 +1,27 @@
 @extends('layout.helloapp')
 
-@section('title','Index');
+@section('title','Person.index');
 
 @section('menubar')
 @parent
-インデックスページ
+新規作成ページ
 @endsection
 
-
 @section('content')
-<table>
+  <table>
     <tr>
-        <th>Name</th>
-        <th>Mail</th>
-        <th>Age</th>
+      <th>name:</th>
+      <th>mail</th>
+      <th>age:</th>
     </tr>
     @foreach ($items as $item)
     <tr>
-        <td>{{$item->name}}</td>
-        <td>{{$item->mail}}</td>
-        <td>{{$item->age}}</td>
+      <td>{{$item->name}}</td>
+      <td>{{$item->mail}}</td>
+      <td>{{$item->age}}</td>
     </tr>
     @endforeach
-</table>
+  </table>
 @endsection
 
 @section('footer')
